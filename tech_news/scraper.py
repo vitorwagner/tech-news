@@ -1,7 +1,17 @@
-# Requisito 1 init
+# Requisito 1
+import requests
+import time
+
+
 def fetch(url):
-    """Seu código deve vir aqui"""
-    raise NotImplementedError
+    try:
+        response = requests.get(url, timeout=3)
+        time.sleep(1)
+    except requests.exceptions.Timeout:
+        return None
+    if response.status_code == 200:
+        return response.text
+    return None
 
 
 # Requisito 2
