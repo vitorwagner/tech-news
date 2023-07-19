@@ -1,6 +1,7 @@
 # Requisito 1
 import requests
 import time
+from bs4 import BeautifulSoup
 
 
 def fetch(url):
@@ -16,8 +17,11 @@ def fetch(url):
 
 # Requisito 2
 def scrape_updates(html_content):
-    """Seu código deve vir aqui"""
-    raise NotImplementedError
+    soup = BeautifulSoup(html_content, "html.parser")
+    posts = []
+    for post in soup.find_all("article", class_="entry-preview"):
+        posts.append(post.find("a").get("href"))
+    return posts
 
 
 # Requisito 3
