@@ -7,8 +7,9 @@ from tech_news.database import create_news
 
 
 def fetch(url):
+    headers = {"user-agent": "Fake user-agent"}
     try:
-        response = requests.get(url, timeout=3)
+        response = requests.get(url, headers=headers, timeout=3)
         time.sleep(1)
     except requests.exceptions.Timeout:
         return None
