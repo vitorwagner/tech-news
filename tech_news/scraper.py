@@ -21,10 +21,11 @@ def fetch(url):
 # Requisito 2
 def scrape_updates(html_content):
     soup = BeautifulSoup(html_content, "html.parser")
-    posts = []
-    for post in soup.find_all("article", class_="entry-preview"):
-        posts.append(post.find("a").get("href"))
-    return posts
+
+    return [
+        post.find("a").get("href")
+        for post in soup.find_all("article", class_="entry-preview")
+    ]
 
 
 # Requisito 3
