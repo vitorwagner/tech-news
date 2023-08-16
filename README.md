@@ -1,10 +1,14 @@
-# Recipes App
-Projeto da [Trybe](https://www.betrybe.com/).
-
-## 💻 Projeto
+# Tech News
+Scraper de notícias de tecnologia desenvolvido para a [Trybe](https://www.betrybe.com/).
 
 ## 🚀 Tecnologias
 > Este projeto foi desenvolvido com as seguintes tecnologias:
+- Python
+- Pytest
+- MongoDB
+- PyMongo
+- BeautifulSoup
+
 
 ## 💬 Contato
 
